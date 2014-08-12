@@ -29,5 +29,9 @@
 - name: copy configuration files
   template: src={{ item }}.conf.j2 dest={{ plugin_conf_dir }}/{{ item }}.conf
   notify: restart {{ service_name }}
-  with_items: collectd_configs 
+  with_items: 
+    - agent
+    - graphite
+    - riak
+    - server
   notify: restart {{ service_name }}

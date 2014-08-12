@@ -1,9 +1,13 @@
 LoadPlugin aggregation
 LoadPlugin cpu
 LoadPlugin disk
+LoadPlugin df
+LoadPlugin entropy
 LoadPlugin interface
 LoadPlugin load
 LoadPlugin memory
+LoadPlugin rrdtool
+LoadPlugin users
 LoadPlugin network
 LoadPlugin processes
 LoadPlugin swap
@@ -34,11 +38,16 @@ LoadPlugin vmem
 # IgnoreSelected false
 #</Plugin>
 
+<Plugin df>
+    Device "/dev/xvda"
+    MountPoint "/"
+    FSType "ext4"
+</Plugin>
 
-#<Plugin interface>
-# Interface "eth0"
-# IgnoreSelected false
-#</Plugin>
+<Plugin interface>
+ Interface "eth0"
+ IgnoreSelected false
+</Plugin>
 
 
 <Plugin network>
@@ -46,14 +55,14 @@ LoadPlugin vmem
 </Plugin>
 
 
-#<Plugin "swap">
-# ReportByDevice false
-# ReportBytes true
-#</Plugin>
+<Plugin "swap">
+ ReportByDevice false
+ ReportBytes true
+</Plugin>
 
 
 
-#<Plugin vmem>
-# Verbose false
-#</Plugin>
+<Plugin vmem>
+ Verbose false
+</Plugin>
 
