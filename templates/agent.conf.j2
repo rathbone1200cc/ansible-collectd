@@ -12,7 +12,7 @@ LoadPlugin network
 LoadPlugin processes
 LoadPlugin swap
 LoadPlugin vmem
-
+LoadPlugin nginx
 
 
 ##############################################################################
@@ -66,3 +66,6 @@ LoadPlugin vmem
  Verbose false
 </Plugin>
 
+<Plugin "nginx">
+  URL "http://127.0.0.1/nginx_status"
+</Plugin>

@@ -1,15 +1,5 @@
 LoadPlugin network
-LoadPlugin csv
-
 
 <Plugin network>
   Listen "{{ collectd_bind_ip }}"
 </Plugin>
-
-<Plugin "csv">
-  DataDir "/var/lib/collectd/csv"
-  StoreRates true
-</Plugin>
-
-
-

@@ -12,9 +12,6 @@
 - include: Debian.yml
   when: ansible_os_family  == "Debian"
 
-- name: create /var/lib/collectd/csv
-  file: path=/var/lib/collectd/csv state=directory
-
 - name: create collectd plugin directory
   file: path={{ plugin_conf_dir }} state=directory
 
